@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="New web page" />
+    <meta name="keyword" content="keyword" />
+    <meta name="lenguage" content="ES" />
+    <meta name="author" content="exdesy.design@gmail.com" />
+    <meta name="robots" content="index.follow" />
+    <meta name="revised" content="Day, Month, Date, Year, Time" />
+    <meta name="vierport" content="width=device=width, initial scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE-edge, chrome1" />
+
+    <title>CHECK</title>
+    <link rel="shortcut icon" href="resources/lib/img/logo.ico" />
+    <!-- ------------------------------  LIBRARY  ------------------------------ -->
+
+    <!-- ------------------------------  STYLES  ------------------------------ -->
+    <link href="resources/css/index.css" rel="stylesheet" type="text/css" />
+    <link href="resources/css/check.css" rel="stylesheet" type="text/css" />
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  </head>
+  <body onload="showContent('<%= message %>')">
+    <div class="wrapper">
+      <header>
+      </header>
+      <div class="content">
+        <main>
+          <% if (typeof qrCode !== 'undefined' && qrCode) { %>
+            <img src="<%= qrCode %>" alt="Código QR">
+          <% } %>
+          <div class="loader" id="formContent">
+            
+          </div>
+          <% if (typeof qrCode !== 'undefined' && qrCode) { %>
+            <form class="form"  method="post">
+              <input name="otp" id="otp" type="number" placeholder="Tu codigo de 2FA"/>
+              <button class="back-button" onclick="check()">CONFIRMAR</button>
+            </form>
+          <% } %>
+          <div id="toastBox">
+            
+          </div>
+        </main>
+        <footer>
+        </footer>
+      </div>
+    </div>
+    <script src="/resources/js/check.js"></script>
+    <script src="https://kit.fontawesome.com/dc427c2d29.js" crossorigin="anonymous"></script>
+  </body>
+</html>

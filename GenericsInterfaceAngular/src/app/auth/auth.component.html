@@ -1,0 +1,56 @@
+<div class="wrapper">
+  <div class="content">
+    <header>
+    </header>
+    <main>
+      <div class="menu">
+        <h1 class="title">GENERICS</h1>
+        <div class="container" [class.right-panel-active]="containerActive">
+          <div *ngIf="activeForm === 'register'" class="form-container sign-up-container">
+            <form class="form" (submit)="onRegister(firstName.value, lastName.value, email.value, password.value, checkAuth.checked)">
+              <h1>REGISTRAR</h1>
+              <input #firstName name="text" type="text" placeholder="Nombre" required/>
+              <input #lastName name="text" type="text" placeholder="Apellidos" required/>
+              <input #email name="email" type="email" placeholder="Correo" required/>
+              <input #password name="password" type="password" placeholder="Contraseña" required/>
+              <section>
+                <label class="switch">
+                  <p>Doble Autenticacion:</p>
+                  <input #checkAuth type="checkbox" class="checkbox" value="true">
+                  <div class="slider"></div>
+                </label>
+              </section>
+              <button type="submit">Crear</button>
+            </form>
+          </div>
+          <div *ngIf="activeForm === 'login'" class="form-container sign-in-container">
+            <form class="form" (submit)="onLogin(email.value, password.value, otp.value)">
+              <h1>INICIAR SESION</h1>
+              <input #email  name="email" type="email" placeholder="Correo" required/>
+              <input #password name="password"  type="password" placeholder="Contraseña" required/>
+              <input #otp name="number"  type="number" placeholder="2FA"/>
+              <a href="#">Olvidaste contraseña?</a>
+              <button type="submit2">Entrar</button>
+            </form>
+          </div>
+          <div class="overlay-container">
+            <div class="overlay">
+              <div class="overlay-panel overlay-left">
+                <h1>Bienvenido de nuevo!</h1>
+                <p>Si ya tienes cuenta, inicie sesión con su información personal</p>
+                <button class="ghost" (click)="togglePanel(false)">Iniciar sesión</button>
+              </div>
+              <div class="overlay-panel overlay-right">
+                <h1>Hola, Amigo!</h1>
+                <p>Si todavia no tienes cuenta, crea una cuenta y comienza tu viaje con nosotros.</p>
+                <button class="ghost" (click)="togglePanel(true)">Crear</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+    </footer>
+  </div>
+</div>

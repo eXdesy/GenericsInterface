@@ -1,0 +1,134 @@
+/* ------------------------------  DEFOULT SETTINGS  ------------------------------ */
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	box-sizing: border-box;
+  font-family: monospace;
+  color: var(--color);
+}
+
+a {
+	text-decoration: none;
+}
+ul, ol, li {
+	list-style: none;
+}
+/* ------------------------------  FONTS  ------------------------------ */
+
+/* ------------------------------  VARIABLES  ------------------------------ */
+:root {
+	--index: calc(1vw + 1vh);
+	--transition: transform .75s cubic-bezier(.075, .5, 0, 1);
+	--gallery-gap: calc(var(--index) * 7.5);
+  --color: #2d2d2d;
+}
+.wrapper {
+	min-height: 100%;
+	overflow: hidden; 
+	/* -----  FOOTER IS ALWAYS BOTTOM...X  ----- */
+	display: flex;
+	flex-direction: column;
+}
+.content {
+	margin: 0 auto;
+	/* -----  CONTENT BORDER  ----- */
+	max-width: 90%;
+}
+main {
+  margin: calc(var(--index) * 2);
+	/* -----  X...AFTER MAIN  ----- */
+	flex: 1 1 auto;
+}
+/* ------------------------------  HEADER...  ------------------------------ */
+.header {
+  height: calc(var(--index) * 2.5);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  box-shadow: 3px 4px 7px -3px #0000001a;
+  padding: calc(var(--index) * .5);
+  position: fixed;
+  top: 0;
+  background: #ffffff;
+}
+.header-title {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+.title-img {
+  align-content: center;
+  text-align: center;
+}
+.title-img img {
+  width: calc(var(--index) * 2);
+}
+.title-text {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  text-align: center;
+  color: #2d2d2d;
+  font-size: calc(var(--index) * 1);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+.title-text span {
+  font-size: calc(var(--index) * 0.5);
+  letter-spacing: 0.3em;
+  color: #40c9ff;
+}
+
+.header-nav {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.nav-menu {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  margin: auto;
+  gap: 10px;
+  justify-content: flex-end;
+}
+.menu-text {
+ border-radius: 10px;
+ font-weight: 900;
+ align-content: center;
+ min-width: calc(var(--index) * 6);
+ height: calc(var(--index) * 1.5);
+ color: #2d2d2d;
+ z-index: 1;
+ background: #ffffff;
+ position: relative;
+ box-shadow: 3px 4px 7px -3px #0000001a;
+ transition: all 250ms;
+ overflow: hidden;
+}
+.menu-text::before {
+ content: "";
+ position: absolute;
+ top: 0;
+ left: 0;
+ height: 100%;
+ width: 0;
+ border-radius: 6px;
+ background-color: #40c9ff;
+ z-index: -1;
+ -webkit-box-shadow: 3px 4px 7px -3px #0000001a;
+ box-shadow: 3px 4px 7px -3px #0000001a;
+ transition: all 250ms
+}
+.menu-text:hover {
+ color: #ffffff;
+}
+.menu-text:hover::before {
+ width: 100%;
+}
+/*  ------------------------------  FOOTER...  ------------------------------ */
